@@ -98,15 +98,15 @@
 // ------------------------------------------------------------------------------------------------------------
 // |BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |               |      |      |       | LBKT |  RBKT |  DEL  |
 // |EXTPWR|      |      |       |       |      |               |      |      |   UP  |      | PSCRN | EQUAL |
-// |RGBTOG|      |      |       |       |      |               |      | LEFT |  DOWN |RIGHT |       | BSLH  |
-// |RGBEFF|      |      |       |       |      | BLE |  |  USB | HOME | END  |       |      |       |       |
+// |RGBTOG|RGBBRI|      |       |       |      |               |      | LEFT |  DOWN |RIGHT |       | BSLH  |
+// |RGBEFF|RGBBRD|      |       |       |      | BLE |  |  USB | HOME | END  |       |      |       |       |
 //               |      |       |       |      |     |  |      |      |      |       |      |
             bindings = <
-&bt BT_CLR        &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                      &none     &none     &none    &kp LBKT  &kp RBKT  &kp DEL
-&ext_power EP_TOG &none        &none        &none        &none        &none                             &none     &none     &kp UP   &none     &kp PSCRN &kp EQUAL
-&rgb_ug RGB_TOG   &none        &none        &none        &none        &none                             &none     &kp LEFT  &kp DOWN &kp RIGHT &none     &kp BSLH
-&rgb_ug RGB_EFF   &none        &none        &none        &none        &none   &out OUT_BLE &out OUT_USB &kp HOME  &kp END   &none    &none     &none     &none
-                               &trans       &trans       &trans       &trans  &trans       &trans       &trans    &trans    &trans   &trans
+&bt BT_CLR        &bt BT_SEL 0     &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                      &none     &none     &none    &kp LBKT  &kp RBKT  &kp DEL
+&ext_power EP_TOG &none            &none        &none        &none        &none                             &none     &none     &kp UP   &none     &kp PSCRN &kp EQUAL
+&rgb_ug RGB_TOG   &rgb_ug RGB_BRI  &none        &none        &none        &none                             &none     &kp LEFT  &kp DOWN &kp RIGHT &none     &kp BSLH
+&rgb_ug RGB_EFF   &rgb_ug RGB_BRD  &none        &none        &none        &none   &out OUT_BLE &out OUT_USB &kp HOME  &kp END   &none    &none     &none     &none
+                                   &trans       &trans       &trans       &trans  &trans       &trans       &trans    &trans    &trans   &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp PG_UP PG_DN>;
